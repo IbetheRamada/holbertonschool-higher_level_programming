@@ -1,8 +1,11 @@
 def max_integer(my_list=[]):
-    if my_list:
-        max = my_list[0]
-        for elm in my_list:
-            if elm > max:
-                max = elm
-        return max
-    return None
+def max_integer(my_list=[]):
+    if len(my_list) == 0:
+        return (None)
+
+    big = my_list[0]
+    for i in range(len(my_list)):
+        if my_list[i] > big:
+            big = my_list[i]
+
+    return (big)
