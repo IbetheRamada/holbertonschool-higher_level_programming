@@ -1,1 +1,0 @@
-A new proyect of dynamic libraries
