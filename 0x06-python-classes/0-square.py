@@ -3,4 +3,3 @@
 class Square:
     """ Empty class square
     A new proyect requeriment; comments"""
-
