@@ -1,56 +1,59 @@
 #!/usr/bin/python3
-class Square:
-    def __init__(self, size=0, position=(0, 0)):
-        self.size = size
-        self.position = position
+"""Defines a class Square"""
 
-    # Size property
+
+class Square:
+    """Represents a square
+    Attributes:
+        __size (int): size of a side of the square
+    """
+    def __init__(self, size=0):
+        """initializes the square
+        Args:
+            size (int): size of a side of the square
+        Returns:
+            None
+        """
+        self.size = size
+
+    def area(self):
+        """calculates the square's area
+        Returns:
+            The area of the square
+        """
+        return (self.__size) ** 2
+
     @property
     def size(self):
+        """getter of __size
+        Returns:
+            The size of the square
+        """
         return self.__size
 
-    # Size setter modifies
     @size.setter
     def size(self, value):
-        if type(value) != int:
-            raise TypeError('size must be an integer')
-        elif value < 0:
-            raise ValueError('size must be >= 0')
+        """setter of __size
+        Args:
+            value (int): size of a side of the square
+        Returns:
+            None
+        """
+        if type(value) is not int:
+            raise TypeError("size must be an integer")
         else:
-            self.__size = value
-
-    # Position property
-    @property
-    def position(self):
-        return self.__position
-
-    # Position setter modifies
-    @position.setter
-    def position(self, value):
-        message = 'position must be a tuple of 2 positive integers'
-        if type(value) != tuple or len(value) != 2:
-            raise TypeError(message)
-
-        for items in value:
-            if type(items) != int or items < 0:
-                raise TypeError(message)
-
-        self.__position = value
-
-    # Functions
-    def area(self):
-        return self.__size ** 2
+            if value < 0:
+                raise ValueError("size must be >= 0")
+            else:
+                self.__size = value
 
     def my_print(self):
-        size = self.__size
-        nl = self.__position[1]
-        ws = self.__position[0]
-
-        if size == 0:
+        """prints the square
+        Returns:
+            None
+        """
+        if self.__size == 0:
             print()
-
-        for newlines in range(nl):
-            print()
-
-        for row in range(size):
-            print((' ' * ws) + ('#' * size))
+            return
+        for i in range(self.__size):
+            print("".join(["#" for j in range(self.__size)]))
