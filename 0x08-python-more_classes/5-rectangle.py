@@ -8,6 +8,7 @@ class Rectangle:
     """
     Representation of a rectangle
     """
+
     def __init__(self, width=0, height=0):
         """
         Initializes the rectangle
@@ -73,7 +74,8 @@ class Rectangle:
 
     def __str__(self):
         """
-        returns printable string representation of the rectangle
+        returns printable string representation 
+        of the rectangle
         """
         string = ""
         if self.__width != 0 and self.__height != 0:
@@ -83,6 +85,7 @@ class Rectangle:
 
     def __repr__(self):
         """
-        returns a string representation of the rectangle for reproduction
+        returns a string representation 
+        of the rectangle for reproduction
         """
         return "Rectangle({:d}, {:d})".format(self.__width, self.__height)
