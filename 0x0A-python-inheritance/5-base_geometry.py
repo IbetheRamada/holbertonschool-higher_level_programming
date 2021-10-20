@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Function with an empty class BaseGeometry.
+Function with an empty class BaseGeometry
 """
 
 
